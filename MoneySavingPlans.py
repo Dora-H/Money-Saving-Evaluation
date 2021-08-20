@@ -12,19 +12,13 @@ class SavingEvaluate(object):
         warnings.filterwarnings('ignore', category=DeprecationWarning)
         warnings.filterwarnings('ignore', category=RuntimeWarning)
 
-        # 總年期數
         self.saving_year = 0
-        # 年利率
         self.rate = 0
-        # 各按年存入之金額
         self.pmt = 0
-        # 期出存入金額
         self.first_deposit = 0
 
     def future_value(self):
-        # 按年繳未來價值 :npf.fv(利率, 期數, 每期支付金額, 起存金額)
         future_value = npf.fv(self.rate, self.saving_year, -self.pmt, -self.first_deposit)
-        # 按年繳未來價值淨利計算，計算到小數後第一位
         future_net_income = np.round((future_value-self.first_deposit-(self.saving_year*self.pmt)), 1)
         print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
               % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
@@ -49,8 +43,6 @@ class SavingEvaluate(object):
         mp.show()
 
     def irr(self, nwp):
-        # 內部收益率irr = irr(現金流)
-        # 如果起始存first_deposit，第1年領nwp、第2年領nwp 共領nwp*3
         cash_flows = [-self.first_deposit]
         for i in range(self.saving_year):
             cash_flows.append(nwp)
@@ -78,9 +70,7 @@ class SavingEvaluate(object):
         mp.show()
 
     def pay_all_at_once(self):
-        # 一次繳清贖回後可得金額
         all_in = npf.fv(self.rate, self.saving_year, 0, -self.first_deposit)
-        # 一次繳清價值淨利計算，計算到小數後第3位
         all_in_net_income = np.round(all_in-self.first_deposit, 3)
         print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %.3f \033[0m 元'
               % (self.pmt, self.rate*100, self.saving_year, all_in))
