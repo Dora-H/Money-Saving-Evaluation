@@ -129,7 +129,6 @@ SavingEvaluate
 ## Run functions			
 #### 1. future_value: npf.fv()
 	future_value = npf.fv(self.rate, self.saving_year, -self.pmt, -self.first_deposit)
-	# 按年繳未來價值淨利計算，計算到小數後第一位
 	future_net_income = np.round((future_value-self.first_deposit-(self.saving_year*self.pmt)), 1)
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
@@ -158,23 +157,21 @@ SavingEvaluate
 ![fv](https://user-images.githubusercontent.com/70878758/130243041-6a3ae2e5-c62d-4d95-aa02-8ffb740aa6f4.png)
 ![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
 
-
-
 	
 #### 2. irr: npf.irr()
         cash_flows = [-self.first_deposit]
         for i in range(self.saving_year):
             cash_flows.append(nwp)
         solution = npf.irr(cash_flows) * 100
-        print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
-        print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' %
-              (((self.first_deposit*(1+self.rate)-nwp)*(1+self.rate)-nwp)*(1+self.rate)-nwp))
-
+	
         money = self.first_deposit
         irrs = [self.first_deposit]
         for i in range(1, self.saving_year+1):
             money += money*self.rate - nwp
             irrs.append(money)
+
+        print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
+        print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' % irrs[-1])
 	    
 #### Data visualization : 
         mp.figure('IRR', facecolor='lightgray')
@@ -188,9 +185,13 @@ SavingEvaluate
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper right', fontsize=14)
         mp.show()
+	
+##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, withdraw 3,250 NTD per period.
+![irr](https://user-images.githubusercontent.com/70878758/130246379-3b0c902a-57fa-4f48-9627-d8bc59e281a3.png)
 
 
-
+	
+	
 #### 3. pay_all: npf.fv()
 	all_in = npf.fv(self.rate, self.saving_year, 0, -self.first_deposit)
         # 一次繳清價值淨利計算，計算到小數後第3位
