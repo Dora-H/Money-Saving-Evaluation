@@ -51,7 +51,7 @@ SavingEvaluate
 
 ## Run codes
 #### 1. Call the main finction to work, start.
-##### enter user's name if entering invalid name, which includes punctuations or whitespace, the code will request user to re-enter till entering a valid name to run next. 
+##### enter user's name if entering invalid name, which includes punctuations or whitespace, codes will request user to re-enter till entering a valid name to run next. 
     while True:
             username = input('請輸入您的名字: ')
             for i in username:
@@ -72,6 +72,8 @@ SavingEvaluate
                                '【2】期初存一筆，各按年提領\n'
                                '【3】一次繳清 \n'
                                '【4】想知道如果想賺多少，剛開始須存入之金額 \n: '))
+			       
+##### codes will not run next till user enters numerical numbers( from 1 to 4 ). 			       
         except ValueError as e:
             print('請輸入1~4的數字，非文字或其他。\n')
             continue
@@ -81,10 +83,14 @@ SavingEvaluate
                 if self.saving_year < 1:
                     print('存錢總年期數須大於1年。\n')
                     continue
+		    
+##### codes will run next for user to enter rate to search
                 self.rate = int(input("請輸入欲查詢的年利率(大於或是等於1)： ")) / 100
                 print('\n您好:%s，您選擇【%d】方式。為期 %d年 存錢方案，%.2f%% 年利率。' % 
                 (username, method, self.saving_year, self.rate*100))
 
+		    
+##### then, codes run next which depends on the money saving plan that user chose.
                 if method == 1:
                     self.first_deposit = int(input("請輸入期初存入金額： "))
                     self.pmt = int(input("請輸入各按年存入金額： "))
@@ -105,8 +111,9 @@ SavingEvaluate
                     future_value = int(input("請輸入最後想領回金額： "))
                     money = int(input("請輸入各按年存入金額： "))
                     self.present_value(money, future_value)
+		    
 
-			
+## Run functions			
 #### 2. Go to the first function, future_value:  
     	
         
