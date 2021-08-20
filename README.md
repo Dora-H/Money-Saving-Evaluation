@@ -3,7 +3,7 @@ By choosing one of three money saving plans, to evaluate users' money saving wis
 
 
 
-## Strategy (this data visualization shows the user have only 46,250 NTD)
+## Strategy (default user have only 46,250 NTD, wants to know which plan is better.)
 1. chose plan 1 : deposit the amount of money firstly, save some per period then.
 2. chose plan 2 : deposit the amount of money firstly, withdraw some per period then.
 3. chose plan 3 : deposit all amount of money, not save or withdraw any per period. 
