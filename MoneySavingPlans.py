@@ -47,15 +47,15 @@ class SavingEvaluate(object):
         for i in range(self.saving_year):
             cash_flows.append(nwp)
         solution = npf.irr(cash_flows) * 100
-        print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
-        print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' %
-              (((self.first_deposit*(1+self.rate)-nwp)*(1+self.rate)-nwp)*(1+self.rate)-nwp))
-
+        
         money = self.first_deposit
         irrs = [self.first_deposit]
         for i in range(1, self.saving_year+1):
             money += money*self.rate - nwp
             irrs.append(money)
+
+        print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
+        print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' % irrs[-1])
 
         mp.figure('IRR', facecolor='lightgray')
         mp.title('IRR', fontsize=24)
