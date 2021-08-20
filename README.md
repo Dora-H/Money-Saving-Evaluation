@@ -154,8 +154,7 @@ SavingEvaluate
         mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
-![fv](https://user-images.githubusercontent.com/70878758/130243041-6a3ae2e5-c62d-4d95-aa02-8ffb740aa6f4.png)
-![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
+![fv](https://user-images.githubusercontent.com/70878758/130248047-c423f950-221f-48e6-a1d3-02fee5369b56.png)
 
 	
 #### 2. irr: npf.irr()
@@ -187,9 +186,7 @@ SavingEvaluate
         mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, withdraw 3,250 NTD per period.
-![irr](https://user-images.githubusercontent.com/70878758/130246379-3b0c902a-57fa-4f48-9627-d8bc59e281a3.png)
-
-
+![irr](https://user-images.githubusercontent.com/70878758/130247634-db9e39ae-ab4e-4e1a-a391-ba696d6a2de9.png)
 	
 	
 #### 3. pay_all: npf.fv()
