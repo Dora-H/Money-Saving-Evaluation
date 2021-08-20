@@ -204,8 +204,8 @@ SavingEvaluate
             plio.append(money)
 	    
 #### Data visualization : 
-        mp.figure('Pay All In Once', facecolor='lightgray')
-        mp.title('Pay All In Once', fontsize=24)
+        mp.figure('Pay Alle', facecolor='lightgray')
+        mp.title('Pay All', fontsize=24)
         mp.xlabel('Year', fontsize=20)
         mp.ylabel('Money', fontsize=20)
         mp.grid(":")
