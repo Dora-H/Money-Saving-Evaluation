@@ -134,22 +134,27 @@ SavingEvaluate
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
+	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
 ![fv](https://user-images.githubusercontent.com/70878758/130243041-6a3ae2e5-c62d-4d95-aa02-8ffb740aa6f4.png)
 ![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
+
 
 
 	
 #### 2. irr: npf.irr()
 
 
+
 #### 3. pay_all: npf.fv()
+
 
 
 #### 4. present_value: npf.pv()
 	present_value = npf.pv(self.rate, self.saving_year, -money, future_value)
 	print("如果要拿回 %d 元，%.2f%%年利率, 為期%d年。" % (future_value, self.rate*100, self.saving_year))
 	print('須先始存:\033[1;30;43m %d \033[0m 元。' % abs(np.floor(present_value)))
+	
 ##### Example: in order to withdraw 51,025 NTD by the end of 5 years, and to save 3,250 amount per period at 2.5% rate. 
 ![bk](https://user-images.githubusercontent.com/70878758/130242257-fc8545fb-1702-4e51-9af3-12129cc439cc.png)
 
