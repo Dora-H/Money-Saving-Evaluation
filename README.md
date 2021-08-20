@@ -1,3 +1,4 @@
+![payall](https://user-images.githubusercontent.com/70878758/130251741-2afee4fc-fa41-421f-a177-a28640ef0720.png)
 # Money-Saving-Plans
 By choosing one of three money saving plans, to evaluate users' money saving wish. The fourth option is for users to check how much amount of money to save firstly in order to withdraw the wish of a sum of money by the end of setting.  
 
@@ -215,6 +216,9 @@ SavingEvaluate
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper left', fontsize=14)
         mp.show()
+	
+##### Example: 5 years, 2.5% rate, 46,250 NTD firstly deposit all amount.
+![payall](https://user-images.githubusercontent.com/70878758/130251779-d3c920a6-f845-4df7-ba66-abab7ad5055a.png)
 
 
 #### 4. present_value: npf.pv()
