@@ -148,7 +148,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(fvs, 'o-', label='Cash Flows')
-##### show the sum of money text on every year plotting
+##### show text of the sum of money on every year plotting
         for x, y in zip(range(self.saving_year+1), fvs):
             mp.text(x+0.1, y+30, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper left', fontsize= 14)
@@ -184,7 +184,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(irrs, 'o-', label='Cash Flows')
-##### show the sum of money text on every year plotting
+##### show text of the sum of money on every year plotting
         for x, y in zip(range(self.saving_year+1), irrs):
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper right', fontsize=14)
@@ -217,7 +217,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(plio, 'o-', label='Cash Flows')
-##### show the sum of money text on every year plotting
+##### show text of the sum of money on every year plotting
         for x, y in zip(range(self.saving_year+1), plio):
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper left', fontsize=14)
