@@ -119,7 +119,7 @@ SavingEvaluate
                 elif plan == 3:
                     self.first_deposit = int(input("請輸入一次性存入金額： "))
                     self.pay_alle()
-##### if user chooses plan 4, user will be asked to enter the amount of money to withdraw by the end of hoping saved-years, saving amount  per period Then codes call the present_value() function in the end.			 
+##### if user chooses plan 4, user will be asked to enter the amount of money to withdraw by the end of hoping saved-years, saving amount per period Then codes call the present_value() function in the end.			 
                 elif plan == 4:
                     future_value = int(input("請輸入最後想領回金額： "))
                     money = int(input("請輸入各按年存入金額： "))
@@ -135,7 +135,8 @@ SavingEvaluate
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
-![fv](https://user-images.githubusercontent.com/70878758/130240998-90ae7244-f239-4c30-8606-c6bea79ae243.png)![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
+![fv](https://user-images.githubusercontent.com/70878758/130243041-6a3ae2e5-c62d-4d95-aa02-8ffb740aa6f4.png)
+![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
 
 
 	
@@ -146,3 +147,11 @@ SavingEvaluate
 
 
 #### 4. present_value: npf.pv()
+	present_value = npf.pv(self.rate, self.saving_year, -money, future_value)
+	print("如果要拿回 %d 元，%.2f%%年利率, 為期%d年。" % (future_value, self.rate*100, self.saving_year))
+	print('須先始存:\033[1;30;43m %d \033[0m 元。' % abs(np.floor(present_value)))
+##### Example: in order to withdraw 51,025 NTD by the end of 5 years, and to save 3,250 amount per period at 2.5% rate. 
+![bk](https://user-images.githubusercontent.com/70878758/130242257-fc8545fb-1702-4e51-9af3-12129cc439cc.png)
+
+
+	
