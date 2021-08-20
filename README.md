@@ -1,4 +1,3 @@
-![payall](https://user-images.githubusercontent.com/70878758/130251741-2afee4fc-fa41-421f-a177-a28640ef0720.png)
 # Money-Saving-Plans
 By choosing one of three money saving plans, to evaluate users' money saving wish. The fourth option is for users to check how much amount of money to save firstly in order to withdraw the wish of a sum of money by the end of setting.  
 
