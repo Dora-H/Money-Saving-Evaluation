@@ -53,7 +53,9 @@ SavingEvaluate
 #### 1. Call the main finction to work, start.
 	if __name__ == "__main__":
 	    run = SavingEvaluate()
-	    run.start()
+	    ask = input('您好，歡迎進入存錢方案: 1)進入選擇 2)退出 ')
+	    if ask == '1':
+		run.start()
 	    
 	    
 #### 2. Enter user's name if entering invalid name, which includes punctuations or whitespace, codes will request user to re-enter till entering a valid name to run next. 
@@ -132,7 +134,10 @@ SavingEvaluate
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
-        
+##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
+![fv](https://user-images.githubusercontent.com/70878758/130240998-90ae7244-f239-4c30-8606-c6bea79ae243.png)![image](https://user-images.githubusercontent.com/70878758/130240900-5904acab-6acd-4785-af70-543b4359d0aa.png)
+
+
 	
 #### 2. irr: npf.irr()
 
