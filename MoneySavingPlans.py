@@ -150,7 +150,8 @@ class SavingEvaluate(object):
                         future_value = int(input("請輸入最後想領回金額： "))
                         money = int(input("請輸入各按年存入金額： "))
                         self.present_value(money, future_value)
-
+            break
+            
 
 if __name__ == "__main__":
     run = SavingEvaluate()
