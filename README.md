@@ -92,9 +92,9 @@ SavingEvaluate
 		    
 		    
 #### 5. Codes will run next for user to enter rate to search
-                self.rate = int(input("請輸入欲查詢的年利率(大於或是等於1)： ")) / 100
+                self.rate = float(input("請輸入欲查詢的年利率(大於或是等於1)： ")) / 100
                 print('\n您好:%s，您選擇【%d】方式。為期 %d年 存錢方案，%.2f%% 年利率。' % 
-                (username, method, self.saving_year, self.rate*100))
+                (username, plan, self.saving_year, self.rate*100))
 
 		    
 #### 6. Codes run next which depends on the money saving plan that user chooses.
@@ -133,6 +133,7 @@ SavingEvaluate
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
         
+	
 #### 2. irr: npf.irr()
 
 
