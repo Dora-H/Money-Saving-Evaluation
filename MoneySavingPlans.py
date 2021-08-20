@@ -127,8 +127,8 @@ class SavingEvaluate(object):
                     if self.saving_year < 1:
                         print('存錢總年期數須大於1年。\n')
                         continue
-                    self.rate = int(input("請輸入欲查詢的年利率(大於或是等於1)： ")) / 100
-                    print('\n您好:%s，您選擇【%d】方式。為期 %d年 存錢方案，%.2f%% 年利率。' % (username, method, self.saving_year, self.rate*100))
+                    self.rate = float(input("請輸入欲查詢的年利率(大於或是等於1)： ")) / 100
+                    print('\n您好:%s，您選擇【%d】方式。為期 %d年 存錢方案，%.2f%% 年利率。' % (username, plan, self.saving_year, self.rate*100))
 
                     if plan == 1:
                         self.first_deposit = int(input("請輸入期初存入金額： "))
