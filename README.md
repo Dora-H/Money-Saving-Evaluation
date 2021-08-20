@@ -134,6 +134,12 @@ SavingEvaluate
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
+	
+	money = self.first_deposit
+        fvs = [self.first_deposit]
+        for i in range(1, self.saving_year+1):
+            money += money*self.rate + self.pmt
+            fvs.append(money)
 
 #### Data visualization : 
 	mp.figure('Future Value', facecolor='lightgray')
@@ -156,11 +162,61 @@ SavingEvaluate
 
 	
 #### 2. irr: npf.irr()
+        cash_flows = [-self.first_deposit]
+        for i in range(self.saving_year):
+            cash_flows.append(nwp)
+        solution = npf.irr(cash_flows) * 100
+        print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
+        print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' %
+              (((self.first_deposit*(1+self.rate)-nwp)*(1+self.rate)-nwp)*(1+self.rate)-nwp))
+
+        money = self.first_deposit
+        irrs = [self.first_deposit]
+        for i in range(1, self.saving_year+1):
+            money += money*self.rate - nwp
+            irrs.append(money)
+	    
+#### Data visualization : 
+        mp.figure('IRR', facecolor='lightgray')
+        mp.title('IRR', fontsize=24)
+        mp.xlabel('Year', fontsize=20)
+        mp.ylabel('Money', fontsize=20)
+        mp.grid(":")
+        mp.tick_params(labelsize=12)
+        mp.plot(irrs, 'o-', label='Cash Flows')
+        for x, y in zip(range(self.saving_year+1), irrs):
+            mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
+        mp.legend(loc='upper right', fontsize=14)
+        mp.show()
 
 
 
 #### 3. pay_all: npf.fv()
+	all_in = npf.fv(self.rate, self.saving_year, 0, -self.first_deposit)
+        # 一次繳清價值淨利計算，計算到小數後第3位
+        all_in_net_income = np.round(all_in-self.first_deposit, 3)
+        print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %.3f \033[0m 元'
+              % (self.pmt, self.rate*100, self.saving_year, all_in))
+        print('總淨利為: \033[1;30;43m%.3f \033[0m 元' % all_in_net_income)
 
+        money = self.first_deposit
+        plio = [self.first_deposit]
+        for i in range(1, self.saving_year+1):
+            money += money*self.rate
+            plio.append(money)
+	    
+#### Data visualization : 
+        mp.figure('Pay All In Once', facecolor='lightgray')
+        mp.title('Pay All In Once', fontsize=24)
+        mp.xlabel('Year', fontsize=20)
+        mp.ylabel('Money', fontsize=20)
+        mp.grid(":")
+        mp.tick_params(labelsize=12)
+        mp.plot(plio, 'o-', label='Cash Flows')
+        for x, y in zip(range(self.saving_year+1), plio):
+            mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
+        mp.legend(loc='upper left', fontsize=14)
+        mp.show()
 
 
 #### 4. present_value: npf.pv()
