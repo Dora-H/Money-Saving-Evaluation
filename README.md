@@ -134,6 +134,19 @@ SavingEvaluate
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
+
+#### Data visualization : 
+	mp.figure('Future Value', facecolor='lightgray')
+        mp.title('Future Value', fontsize=24)
+        mp.xlabel('Year', fontsize=20)
+        mp.ylabel('Money', fontsize=20)
+        mp.grid(":")
+        mp.tick_params(labelsize=12)
+        mp.plot(fvs, 'o-', label='Cash Flows')
+        for x, y in zip(range(self.saving_year+1), fvs):
+            mp.text(x+0.1, y+30, '%.3f' % y, ha='center', va='bottom', fontsize=13)
+        mp.legend(loc='upper left', fontsize= 14)
+        mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
 ![fv](https://user-images.githubusercontent.com/70878758/130243041-6a3ae2e5-c62d-4d95-aa02-8ffb740aa6f4.png)
