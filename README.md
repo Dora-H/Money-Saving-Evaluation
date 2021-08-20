@@ -169,8 +169,11 @@ SavingEvaluate
             money += money*self.rate - nwp
             irrs.append(money)
 
+        irr_net_income = np.round(irrs[-1]-(self.first_deposit - nwp*self.saving_year), 1)
+
         print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
         print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' % irrs[-1])
+        print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % irr_net_income)
 	    
 #### Data visualization : 
         mp.figure('IRR', facecolor='lightgray')
@@ -185,8 +188,8 @@ SavingEvaluate
         mp.legend(loc='upper right', fontsize=14)
         mp.show()
 	
-##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, withdraw 3,250 NTD per period.
-![irr](https://user-images.githubusercontent.com/70878758/130247634-db9e39ae-ab4e-4e1a-a391-ba696d6a2de9.png)
+##### Example: 5 years, 2.5% rate, 46,250 NTD firstly deposit, withdraw 3,250 NTD per period.
+
 	
 	
 #### 3. pay_all: npf.fv()
