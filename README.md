@@ -133,7 +133,7 @@ SavingEvaluate
 	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
 	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
 	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
-	
+##### according to the saving years to append in the cash-flow(fvs) list
 	money = self.first_deposit
         fvs = [self.first_deposit]
         for i in range(1, self.saving_year+1):
@@ -148,6 +148,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(fvs, 'o-', label='Cash Flows')
+##### show the sum of money text on every year plotting
         for x, y in zip(range(self.saving_year+1), fvs):
             mp.text(x+0.1, y+30, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper left', fontsize= 14)
@@ -162,7 +163,7 @@ SavingEvaluate
         for i in range(self.saving_year):
             cash_flows.append(nwp)
         solution = npf.irr(cash_flows) * 100
-	
+##### according to the saving years to append in the cash-flow(irrs) list
         money = self.first_deposit
         irrs = [self.first_deposit]
         for i in range(1, self.saving_year+1):
@@ -183,6 +184,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(irrs, 'o-', label='Cash Flows')
+##### show the sum of money text on every year plotting
         for x, y in zip(range(self.saving_year+1), irrs):
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper right', fontsize=14)
@@ -200,7 +202,7 @@ SavingEvaluate
         print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %.3f \033[0m 元'
               % (self.pmt, self.rate*100, self.saving_year, all_in))
         print('總淨利為: \033[1;30;43m%.3f \033[0m 元' % all_in_net_income)
-
+##### according to the saving years to append in the cash-flow(plio) list
         money = self.first_deposit
         plio = [self.first_deposit]
         for i in range(1, self.saving_year+1):
@@ -215,6 +217,7 @@ SavingEvaluate
         mp.grid(":")
         mp.tick_params(labelsize=12)
         mp.plot(plio, 'o-', label='Cash Flows')
+##### show the sum of money text on every year plotting
         for x, y in zip(range(self.saving_year+1), plio):
             mp.text(x+0.1, y, '%.3f' % y, ha='center', va='bottom', fontsize=13)
         mp.legend(loc='upper left', fontsize=14)
