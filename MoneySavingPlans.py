@@ -54,8 +54,11 @@ class SavingEvaluate(object):
             money += money*self.rate - nwp
             irrs.append(money)
 
+        irr_net_income = np.round(irrs[-1]-(self.first_deposit - nwp*self.saving_year), 1)
+
         print("依照您輸入的相關數據，本存錢方案的 IRR 為 : \033[1;30;43m %.3f%% \033[0m 元" % solution)
         print('最後可領回 : \033[1;30;43m %.3f \033[0m 元' % irrs[-1])
+        print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % irr_net_income)
 
         mp.figure('IRR', facecolor='lightgray')
         mp.title('IRR', fontsize=24)
