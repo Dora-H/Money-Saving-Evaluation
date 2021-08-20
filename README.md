@@ -1,13 +1,13 @@
-# Money-Saving-Evaluation
+# Money-Saving-Plans
 By choosing one of three money saving plans, to evaluate users' money saving wish. The fourth option is for users to check how much amount of money to save firstly in order to withdraw the wish of a sum of money by the end of setting.  
 
 
 
 ## Strategy
-1. chose plan 1 : 
-2. chose plan 2 :
-3. chose plan 3 :
-4. chose plan 4 :
+1. chose plan 1 : deposit the amount of money firstly, save some per period then.
+2. chose plan 2 : deposit the amount of money firstly, withdraw some per period then.
+3. chose plan 3 : deposit all amount of money, not save or withdraw any per period. 
+4. chose plan 4 : withdraw the amount of money in the end, how much to deposit firstly and the amount per period to save.
 
 
 ## Requirements
@@ -27,7 +27,7 @@ SavingEvaluate
 ## Functions
 ● future_value    
 ● irr  
-● pay_all_at_once   
+● pay_all   
 ● present_value  
 ● start
 
@@ -98,7 +98,7 @@ SavingEvaluate
 
 		    
 #### 6. Codes run next which depends on the money saving plan that user chooses.
-##### if user chooses plan 1, user will be asked to enter the amount of money to firstly deposit, saving amount  per period. Then codes call the future_value() function in the end.
+##### if user chooses plan 1, user will be asked to enter the amount of money to firstly deposit, and the amount per period to save then. Codes call the future_value() function in the end.
                 if plan == 1:
                     self.first_deposit = int(input("請輸入期初存入金額： "))
                     self.pmt = int(input("請輸入各按年存入金額： "))
@@ -108,15 +108,15 @@ SavingEvaluate
                     npv = npf.npv(self.rate, cash_flows)
                     print('本存錢方案的淨現值: \033[1;30;43m%.1f \033[0m 元' % npv)
                     self.future_value()
-##### if user chooses plan 2, user will be asked to enter the amount of money to firstly deposit, and hope to withdraw the amount of money per period. Then codes call the irr() function in the end.		    
+##### if user chooses plan 2, user will be asked to enter the amount of money to firstly deposit, and hope to withdraw the amount of money per period. Codes call the irr() function in the end.		    
                 elif plan == 2:
                     self.first_deposit = int(input("請輸入期初存入金額： "))
                     nwp = int(input("請輸入各按年提領金額： "))
                     self.irr(nwp)
-##### if user chooses plan 3, user will be asked to enter the amount of money to pay all at once. Then codes call the pay_all_at_once() function in the end.			    
+##### if user chooses plan 3, user will be asked to enter the amount of money to pay all at once. Codes call the pay_all() function in the end.			    
                 elif plan == 3:
                     self.first_deposit = int(input("請輸入一次性存入金額： "))
-                    self.pay_all_at_once()
+                    self.pay_alle()
 ##### if user chooses plan 4, user will be asked to enter the amount of money to withdraw by the end of hoping saved-years, saving amount  per period Then codes call the present_value() function in the end.			 
                 elif plan == 4:
                     future_value = int(input("請輸入最後想領回金額： "))
@@ -131,7 +131,7 @@ SavingEvaluate
 #### 2. irr: 
 
 
-#### 3. pay_all_at_once:
+#### 3. pay_all:
 
 
 #### 4. present_value:
