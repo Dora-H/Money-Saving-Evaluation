@@ -189,6 +189,7 @@ SavingEvaluate
         mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 46,250 NTD firstly deposit, withdraw 3,250 NTD per period.
+![irr](https://user-images.githubusercontent.com/70878758/130254270-c9732148-24e1-4b9a-9ba1-a3f19bcab293.png)
 
 	
 	
