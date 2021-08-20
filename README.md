@@ -125,13 +125,18 @@ SavingEvaluate
 		    
 
 ## Run functions			
-#### 1. future_value:  
-                       	
+#### 1. future_value: npf.fv()
+	future_value = npf.fv(self.rate, self.saving_year, -self.pmt, -self.first_deposit)
+	# 按年繳未來價值淨利計算，計算到小數後第一位
+	future_net_income = np.round((future_value-self.first_deposit-(self.saving_year*self.pmt)), 1)
+	print('以每年 %d 元投資%.2f%%年利率，%d 年後可領回: \033[1;30;43m %d \033[0m 元'
+	      % (self.pmt, self.rate*100, self.saving_year, int(future_value)))
+	print('總淨利為: \033[1;30;43m%.1f \033[0m 元' % future_net_income)
         
-#### 2. irr: 
+#### 2. irr: npf.irr()
 
 
-#### 3. pay_all:
+#### 3. pay_all: npf.fv()
 
 
-#### 4. present_value:
+#### 4. present_value: npf.pv()
