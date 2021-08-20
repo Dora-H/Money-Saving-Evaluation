@@ -149,10 +149,12 @@ class SavingEvaluate(object):
                     elif plan == 4:
                         future_value = int(input("請輸入最後想領回金額： "))
                         money = int(input("請輸入各按年存入金額： "))
-                        self.present_value(money, future_value)
-            break
-            
+                        self.present_value(money, future_value)            
+                    break
+
 
 if __name__ == "__main__":
     run = SavingEvaluate()
-    run.start()
+    ask = input('您好，歡迎進入存錢方案: 1)進入選擇 2)退出 ')
+    if ask == '1':
+        run.start()
