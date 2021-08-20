@@ -82,8 +82,8 @@ class SavingEvaluate(object):
             money += money*self.rate
             plio.append(money)
 
-        mp.figure('Pay All In Once', facecolor='lightgray')
-        mp.title('Pay All In Once', fontsize=24)
+        mp.figure('Pay All', facecolor='lightgray')
+        mp.title('Pay All', fontsize=24)
         mp.xlabel('Year', fontsize=20)
         mp.ylabel('Money', fontsize=20)
         mp.grid(":")
