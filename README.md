@@ -7,7 +7,7 @@ By choosing one of three money saving plans, to evaluate users' money saving wis
 1. chose plan 1 : deposit the amount of money firstly at the start of the year, save some per end of year then.
 2. chose plan 2 : deposit the amount of money firstly at the start of the year, withdraw some per end of year then.
 3. chose plan 3 : deposit all amount of money, not save or withdraw any per period. 
-4. chose plan 4 : withdraw the amount of money by the end of setting saving years, need to deposit firstly how m uch and how much the amount per end of yeard to save.
+4. chose plan 4 : withdraw the amount of money by the end of setting saving years, need to deposit firstly how much and how much the amount per end of yeard to save.
 
 
 ## Requirements
