@@ -73,12 +73,12 @@ SavingEvaluate
                 
 #### 3. Choose money saving plans
     while True:
-        try:
+    	try:
             plan = int(input('請選擇存錢方案\n'
-                             '【1】期初存一筆，各按年存入\n'
-                             '【2】期初存一筆，各按年提領\n'
-                             '【3】一次繳清 \n'
-                             '【4】想知道如果想賺多少，剛開始須存入之金額 \n: '))
+                             '【1】年初存一筆，各按年底存入\n'
+                             '【2】年初存一筆，各按年底提領\n'
+                             '【3】整付整存 \n'
+                             '【4】想知道設定的存錢年底到期後可領回共多少，年初須存入之金額 \n: '))
 			       
 			       
 #### 4. Codes will not run next till user enters numerical numbers( only from 1 to 4 ). 		       
@@ -106,9 +106,7 @@ SavingEvaluate
                     self.pmt = int(input("請輸入各按年存入金額： "))
                     cash_flows = [-self.first_deposit]
                     for i in range(self.saving_year):
-                        cash_flows.append(self.pmt)
-                    npv = npf.npv(self.rate, cash_flows)
-                    print('本存錢方案的淨現值: \033[1;30;43m%.1f \033[0m 元' % npv)
+                        cash_flows.append(self.pmt)                    
                     self.future_value()
 ##### if user chooses plan 2, user will be asked to enter the amount of money to firstly deposit, and hope to withdraw the amount of money per period. Codes call the irr() function in the end.		    
                 elif plan == 2:
@@ -155,7 +153,7 @@ SavingEvaluate
         mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
-![fv](https://user-images.githubusercontent.com/70878758/130248047-c423f950-221f-48e6-a1d3-02fee5369b56.png)
+
 
 	
 #### 2. irr: npf.irr()
