@@ -4,10 +4,10 @@ By choosing one of three money saving plans, to evaluate users' money saving wis
 
 
 ## Strategy (default user have only 46,250 NTD, wants to know which plan is suitable.)
-1. chose plan 1 : deposit the amount of money firstly, save some per period then.
-2. chose plan 2 : deposit the amount of money firstly, withdraw some per period then.
+1. chose plan 1 : deposit the amount of money firstly at the start of the year, save some per end of year then.
+2. chose plan 2 : deposit the amount of money firstly at the start of the year, withdraw some per end of year then.
 3. chose plan 3 : deposit all amount of money, not save or withdraw any per period. 
-4. chose plan 4 : withdraw the amount of money in the end, how much to deposit firstly and the amount per period to save.
+4. chose plan 4 : withdraw the amount of money by the end of setting saving years, need to deposit firstly how m uch and how much the amount per end of yeard to save.
 
 
 ## Requirements
@@ -153,6 +153,7 @@ SavingEvaluate
         mp.show()
 	
 ##### Example: 5 years, 2.5% rate, 30,000 NTD firstly deposit, save 3,250 NTD per period.
+![fv](https://user-images.githubusercontent.com/70878758/130316628-a6cc3518-b6fe-4e80-a74d-7def13b2caff.png)
 
 
 	
