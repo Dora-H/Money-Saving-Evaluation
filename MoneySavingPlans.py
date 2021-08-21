@@ -139,8 +139,6 @@ class SavingEvaluate(object):
                         cash_flows = [-self.first_deposit]
                         for i in range(self.saving_year):
                             cash_flows.append(self.pmt)
-                        npv = npf.npv(self.rate, cash_flows)
-                        print('本存錢方案的淨現值: \033[1;30;43m%.1f \033[0m 元' % npv)
                         self.future_value()
                     elif plan == 2:
                         self.first_deposit = int(input("請輸入期初存入金額： "))
