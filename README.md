@@ -16,7 +16,6 @@ By choosing one of three money saving plans, to evaluate users' money saving wis
 ● numpy   
 ● warnings  
 ● string  
-● pymysql  
 ● matplotlib 
 
 
