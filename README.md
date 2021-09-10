@@ -38,13 +38,13 @@ SavingEvaluate
             warnings.filterwarnings('ignore', category=DeprecationWarning)
             warnings.filterwarnings('ignore', category=RuntimeWarning)
 
-            # 總年期數
+            # savinf years
             self.saving_year = 0
-            # 年利率
+            # APR, default =0
             self.rate = 0
-            # 各按年存入之金額
+            # periodic payment for an annuity
             self.pmt = 0
-            # 期出存入金額
+            # the amount of deposit firstly
             self.first_deposit = 0
 
 
