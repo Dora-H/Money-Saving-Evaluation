@@ -52,20 +52,20 @@ SavingEvaluate
 #### 1. Call the main finction to work, start.
 	if __name__ == "__main__":
 	    run = SavingEvaluate()
-	    ask = input('您好，歡迎進入存錢方案: 1)進入選擇 2)退出 ')
+	    ask = input('您好Hello, 歡迎進入小型存錢方案welcome to Money Saving Plans: 1)選擇Choose 2)退出Quit ')
 	    if ask == '1':
 		run.start()
 	    
 	    
 #### 2. Enter user's name if entering invalid name, which includes punctuations or whitespace, codes will request user to re-enter till entering a valid name to run next. 
     while True:
-            username = input('請輸入您的名字: ')
+            username = input('請輸入您的名字 Please enter your name: ')
             for i in username:
                 if i in self.all_charts:
-                    print('請輸入有效名字。')
+                    print('請輸入有效名字。Invalid name.')
                     continue
             if username.isalpha() is True:
-                print('有效名字 :%s，您好!' % username)
+                print('有效名字Valid name :%s，您好Hello!' % username)
                 time.sleep(1)
                 break
                 
